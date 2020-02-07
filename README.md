@@ -9,4 +9,4 @@ All your screenshots will be saved in a zip archive.
 
 The maximum limit of screenshots download is actually 5 000.
 
-If you like my work please leave a comment :)
+Extension released on Chrome Webstore on 22nd June 2017.
