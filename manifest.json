@@ -15,14 +15,14 @@
       ]
     }
   ],
-  "description": "Download you lightshot gallery in one click !",
+  "description": "Download your lightshot gallery in one click !",
   "externally_connectable": {
     "accept_tls_channel_id": true,
     "matches": [
       "*://prntscr.com/gallery.html"
     ]
   },
-  "homepage_url": "http://fortytwo.tk/",
+  "homepage_url": "https://github.com/Sorok-Dva/lightshot-gallery-downloader",
   "icons": {
     "128": "logo128.png"
   },
@@ -33,5 +33,5 @@
     "*://prnt.sc/*"
   ],
   "update_url": "https://clients2.google.com/service/update2/crx",
-  "version": "0.1"
+  "version": "0.2"
 }
