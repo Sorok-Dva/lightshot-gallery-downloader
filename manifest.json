@@ -1,0 +1,37 @@
+{
+  "author": "Llyam Garcia",
+  "content_scripts": [
+    {
+      "js": [
+        "js/libs/jquery.js",
+        "js/libs/prntscr.js",
+        "js/libs/jszip.js",
+        "js/libs/jsziputils.js",
+        "js/libs/filesaver.js",
+        "prntscr-downloader.js"
+      ],
+      "matches": [
+        "https://prntscr.com/gallery.html"
+      ]
+    }
+  ],
+  "description": "Download you lightshot gallery in one click !",
+  "externally_connectable": {
+    "accept_tls_channel_id": true,
+    "matches": [
+      "*://prntscr.com/gallery.html"
+    ]
+  },
+  "homepage_url": "http://fortytwo.tk/",
+  "icons": {
+    "128": "logo128.png"
+  },
+  "manifest_version": 2,
+  "name": "Lightshot Gallery Downloader",
+  "permissions": [
+    "*://*.prntscr.com/*",
+    "*://prnt.sc/*"
+  ],
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "version": "0.1"
+}
