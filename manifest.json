@@ -11,7 +11,7 @@
         "prntscr-downloader.js"
       ],
       "matches": [
-        "https://prntscr.com/gallery.html"
+        "https://prnt.sc/gallery.html"
       ]
     }
   ],
@@ -19,19 +19,18 @@
   "externally_connectable": {
     "accept_tls_channel_id": true,
     "matches": [
-      "*://prntscr.com/gallery.html"
+      "*://prnt.sc/gallery.html"
     ]
   },
   "homepage_url": "https://github.com/Sorok-Dva/lightshot-gallery-downloader",
   "icons": {
     "128": "logo128.png"
   },
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Lightshot Gallery Downloader",
-  "permissions": [
-    "*://*.prntscr.com/*",
+  "host_permissions": [
     "*://prnt.sc/*"
   ],
   "update_url": "https://clients2.google.com/service/update2/crx",
-  "version": "0.2"
+  "version": "0.3"
 }
