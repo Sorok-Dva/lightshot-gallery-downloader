@@ -52,7 +52,10 @@ type LightshotResponse = {
 export interface ScreenMeta {
   id36: string;
   url: string;
-  createdAt?: string;
+  date: string;
+  thumb?: string,
+  description?: string | null,
+  share_url?: string | null,
 }
 
 export interface FetchScreensResult {
@@ -124,7 +127,7 @@ export class LightshotClient {
     const screens = candidateScreens.map<ScreenMeta>((screen) => ({
       id36: String(screen.id36),
       url: String(screen.url),
-      createdAt: typeof screen.created_at === 'string' ? screen.created_at : undefined,
+      date: typeof screen.date === 'string' ? screen.date : new Date().toLocaleDateString(),
     }))
 
     return {

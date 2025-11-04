@@ -289,7 +289,13 @@ export class DownloadService {
         }
 
         const buffer = await response.arrayBuffer()
-        zip.file(`screenshot_${screen.id36}.png`, buffer)
+        const fileOptions: JSZip.JSZipFileOptions = {}
+        const parsedDate = parseLightshotDate(screen.date)
+        if (parsedDate) {
+          fileOptions.date = parsedDate
+        }
+
+        zip.file(`screenshot_${screen.id36}.png`, buffer, fileOptions)
 
         if (throttleDelayMs > 0) {
           await delay(throttleDelayMs, signal)
@@ -366,4 +372,17 @@ const encodeToBase64 = (bytes: Uint8Array): string => {
     binary += String.fromCharCode(...chunk)
   }
   return btoa(binary)
+}
+
+const parseLightshotDate = (value?: string): Date | undefined => {
+  if (!value) {
+    return undefined
+  }
+
+  const parsed = new Date(value)
+  if (!Number.isNaN(parsed.getTime())) {
+    return parsed
+  }
+
+  return undefined
 }
