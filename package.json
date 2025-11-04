@@ -1,0 +1,35 @@
+{
+  "name": "lightshot-gallery-downloader",
+  "version": "2.0.0",
+  "description": "Download your lightshot gallery in one click !",
+  "type": "module",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "npm run clean && node scripts/build.js",
+    "dev": "node scripts/build.js --watch",
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit",
+    "test": "echo \"No tests configured\" && exit 0"
+  },
+  "keywords": [
+    "lightshot",
+    "downloader",
+    "chrome-extension"
+  ],
+  "author": "Сорок два <sorokdva.developer@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "jszip": "^3.10.1"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.1.27",
+    "@types/node": "^24.10.0",
+    "@typescript-eslint/eslint-plugin": "^8.46.3",
+    "@typescript-eslint/parser": "^8.46.3",
+    "esbuild": "^0.25.12",
+    "eslint": "^9.39.1",
+    "globals": "^16.5.0",
+    "tailwindcss": "^3.4.13",
+    "typescript": "^5.9.3"
+  }
+}

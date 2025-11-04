@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": {
+      "type": "modifyHeaders",
+      "responseHeaders": [
+        { "header": "access-control-allow-origin", "operation": "set", "value": "*" },
+        { "header": "access-control-allow-credentials", "operation": "set", "value": "true" }
+      ]
+    },
+    "condition": {
+      "urlFilter": "||prntscr.com/file/",
+      "resourceTypes": ["xmlhttprequest"]
+    }
+  }
+]

@@ -1,36 +1,60 @@
 {
-  "author": "Llyam Garcia",
+  "manifest_version": 3,
+  "name": "Lightshot Gallery Downloader",
+  "description": "Download every screenshot from your Lightshot gallery in one click.",
+  "version": "2.0.0",
+  "permissions": [
+    "downloads",
+    "storage",
+    "tabs",
+    "declarativeNetRequest",
+    "declarativeNetRequestFeedback"
+  ],
+  "host_permissions": [
+    "https://*.prntscr.com/*",
+    "https://prnt.sc/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Download my Lightshot gallery"
+  },
+  "options_page": "credits/index.html",
+  "icons": {
+    "128": "assets/icon128.png"
+  },
   "content_scripts": [
     {
-      "js": [
-        "js/libs/jquery.js",
-        "js/libs/prntscr.js",
-        "js/libs/jszip.js",
-        "js/libs/jsziputils.js",
-        "js/libs/filesaver.js",
-        "prntscr-downloader.js"
-      ],
       "matches": [
         "https://prnt.sc/gallery.html"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "content.css"
       ]
     }
   ],
-  "description": "Download your lightshot gallery in one click !",
-  "externally_connectable": {
-    "accept_tls_channel_id": true,
-    "matches": [
-      "*://prnt.sc/gallery.html"
-    ]
-  },
-  "homepage_url": "https://github.com/Sorok-Dva/lightshot-gallery-downloader",
-  "icons": {
-    "128": "logo128.png"
-  },
-  "manifest_version": 3,
-  "name": "Lightshot Gallery Downloader",
-  "host_permissions": [
-    "*://prnt.sc/*"
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/*"
+      ],
+      "matches": [
+        "https://prnt.sc/*"
+      ]
+    }
   ],
-  "update_url": "https://clients2.google.com/service/update2/crx",
-  "version": "0.3"
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "cors_fix",
+        "enabled": true,
+        "path": "rules/rules.json"
+      }
+    ]
+  }
 }

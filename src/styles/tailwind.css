@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+}
+
+@layer components {
+  .lgd-panel-shadow {
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.55);
+  }
+
+  .lgd-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .lgd-scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgba(148, 163, 184, 0.4);
+    border-radius: 9999px;
+  }
+}
